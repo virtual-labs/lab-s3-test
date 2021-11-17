@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Update and install required applications
-    - run: |
+      run: |
         apt update && apt install make git -y
         ls
         cd civil11-test/src/
