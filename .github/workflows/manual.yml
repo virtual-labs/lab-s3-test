@@ -1,0 +1,23 @@
+# This workflow is used to build a lab and push it to AWS S3
+
+name: GitHub to S3
+on:
+  push:
+# mentioning which branch should be used to build the experimnet
+    branches: 
+      - testing
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Update and install required applications
+    - run: |
+        apt update && apt install make git -y
+        ls
+        cd civil11-test/src/
+        make all
+        cd ../
+        ls 
+        cd build 
+        ls
