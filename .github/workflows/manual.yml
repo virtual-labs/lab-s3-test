@@ -13,7 +13,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Update and install required applications
       run: |
-        apt update && apt install make git -y
+        sudo apt-get update && sudo apt-get install make git awscli -y
         ls
         cd civil11-test/src/
         make all
