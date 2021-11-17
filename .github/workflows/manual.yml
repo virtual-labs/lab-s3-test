@@ -10,6 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v1
     - name: Update and install required applications
     - run: |
         apt update && apt install make git -y
