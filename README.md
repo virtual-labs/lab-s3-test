@@ -1,2 +1,2 @@
 # lab-s3-test
-This private repo is created for testing new configurations.
+This private repo is created for testing new configurations..
