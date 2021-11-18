@@ -1,4 +1,4 @@
-e# This workflow is used to build a lab and push it to AWS S3
+# This workflow is used to build a lab and push it to AWS S3
 
 name: GitHub to S3
 on:
