@@ -20,6 +20,6 @@ jobs:
         aws-region: ${{ secrets.AWS_REGION }}
     - name: AWS Actions
     # Following will remove contents from backup bucket then move contents of prod bucket to backup and copy new sources to prod bucket
-      run: |
-           ls 
-           aws s3 cp ./civil11-test/ s3://infra-test-main/civil11-test/ --recursive --include "*.html" --include "*.js" --include "*.svg"
+      run: ls
+    - name : test
+      run: aws s3 cp ./civil11-test/ s3://infra-test-main/civil11-test/ --recursive --include "*.html" --include "*.js" --include "*.svg"
