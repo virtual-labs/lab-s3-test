@@ -15,7 +15,4 @@ Inside siplab-simulation folder, siplab.sql file is there.
 Import database "siplab.sql". 
 
 
-
-
-
 Developed by IIT Bombay.
