@@ -21,4 +21,4 @@ jobs:
     - name: AWS Actions
     # Following will remove contents from backup bucket then move contents of prod bucket to backup and copy new sources to prod bucket
       run: |
-           aws s3 rm s3://infra-test-backup/civil11-test --recursive && aws s3 mv s3://infra-test-main/civil11-test s3://infra-test-backup/civil11-test --recursive && aws s3 cp ./civil11-test/ s3://infra-test-main/civil11-test/ --recursive --include "*.html" --include "*.js" --include "*.svg"
+           aws s3 rm s3://infra-test-backup/civil11-test --recursive && aws s3 mv s3://infra-test-main/civil11-test s3://infra-test-backup/civil11-test --recursive && ls && aws s3 cp ./civil11-test/ s3://infra-test-main/civil11-test --recursive --include "*.html" --include "*.js" --include "*.svg"
