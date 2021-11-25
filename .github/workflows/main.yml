@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Update and install required applications
-      run: sudo apt-get update && sudo apt-get install awscli -y
+      run: sudo apt-get update && sudo apt-get install awscli -y && mkdir /tmp/civil11-test
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -21,4 +21,4 @@ jobs:
         aws-region: ${{ secrets.AWS_REGION }}
     - name: clone 
       run: |
-           aws s3 mv s3://infra-test-main/civil11-test s3://infra-test-backup/civil11-test --recursive && aws s3 cp ./civil11-test/ s3://infra-test-main/civil11-test/ --recursive --include "*.html" --include "*.js" --include "*.svg"
+           aws s3 cp /tmp/civil11-test s3://infra-test-main/ --recursive && aws s3 mv s3://infra-test-main/civil11-test s3://infra-test-backup/civil11-test --recursive && aws s3 cp ./civil11-test/ s3://infra-test-main/civil11-test/ --recursive --include "*.html" --include "*.js" --include "*.svg"
