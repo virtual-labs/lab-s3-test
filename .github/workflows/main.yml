@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Update and install required applications
-      run: sudo apt-get update && sudo apt-get install awscli -y && mkdir /tmp/civil11-test
+      run: sudo apt-get update && sudo apt-get install awscli -y && mkdir /tmp/${{ secrets.LAB_NAME }}
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -21,4 +21,4 @@ jobs:
         aws-region: ${{ secrets.AWS_REGION }}
     - name: clone 
       run: |
-           aws s3 cp /tmp/civil11-test s3://infra-test-main/ --recursive && aws s3 mv s3://infra-test-main/civil11-test s3://infra-test-backup/civil11-test --recursive && aws s3 cp ./civil11-test/ s3://infra-test-main/civil11-test/ --recursive --include "*.html" --include "*.js" --include "*.svg"
+           aws s3 rm s3://${{ secrets.BUCKET_BACKUP }}/${{ secrets.LAB_NAME }} --recursive && aws s3 cp /tmp/${{ secrets.LAB_NAME }} s3://${{ secrets.BUCKET_MAIN }}/ --recursive && aws s3 mv s3://${{ secrets.BUCKET_MAIN }}/${{ secrets.LAB_NAME }} s3://${{ secrets.BUCKET_BACKUP }}/${{ secrets.LAB_NAME }} --recursive && aws s3 cp ./${{ secrets.LAB_NAME }}/ s3://${{ secrets.BUCKET_MAIN }}/${{ secrets.LAB_NAME }}/ --recursive --include "*.html" --include "*.js" --include "*.svg"
