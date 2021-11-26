@@ -28,4 +28,4 @@ jobs:
            aws s3 rm s3://${{ secrets.BUCKET_BACKUP }}/${{ secrets.LAB_NAME }} --recursive
            aws s3 cp /tmp/${{ secrets.LAB_NAME }} s3://${{ secrets.BUCKET_MAIN }}/
            aws s3 mv s3://${{ secrets.BUCKET_MAIN }}/${{ secrets.LAB_NAME }} s3://${{ secrets.BUCKET_BACKUP }}/${{ secrets.LAB_NAME }} --recursive
-           aws s3 cp build/ s3://${{ secrets.BUCKET_MAIN }}/${{ secrets.LAB_NAME }}/ --recursive --include "*.html" --include "*.js" --include "*.css"
+           aws s3 cp civil11-test/build/ s3://${{ secrets.BUCKET_MAIN }}/${{ secrets.LAB_NAME }}/ --recursive --include "*.html" --include "*.js" --include "*.css"
