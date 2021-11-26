@@ -12,7 +12,11 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Updating and installing required applications
-      run: sudo apt-get update && sudo apt-get install awscli -y && mkdir /tmp/${{ secrets.LAB_NAME }}
+      run: |
+           sudo apt-get update && sudo apt-get install make awscli -y && mkdir /tmp/${{ secrets.LAB_NAME }}
+           cd civil11-test/src
+           pwd
+           make all
     - name: Configuring AWS CLI
       uses: aws-actions/configure-aws-credentials@v1
       with:
