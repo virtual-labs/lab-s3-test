@@ -15,8 +15,8 @@ jobs:
       run: |
            sudo apt-get update && sudo apt-get install make awscli -y && mkdir /tmp/${{ secrets.LAB_NAME }}
            cd civil11-test/src
-           pwd
            make all
+           cd ../
     - name: Configuring AWS CLI
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -25,8 +25,7 @@ jobs:
         aws-region: ${{ secrets.AWS_REGION }}
     - name: deploying to s3 
       run: |
-           pwd && ls
            aws s3 rm s3://${{ secrets.BUCKET_BACKUP }}/${{ secrets.LAB_NAME }} --recursive
            aws s3 cp /tmp/${{ secrets.LAB_NAME }} s3://${{ secrets.BUCKET_MAIN }}/
            aws s3 mv s3://${{ secrets.BUCKET_MAIN }}/${{ secrets.LAB_NAME }} s3://${{ secrets.BUCKET_BACKUP }}/${{ secrets.LAB_NAME }} --recursive
-           aws s3 cp ./${{ secrets.LAB_NAME }}/ s3://${{ secrets.BUCKET_MAIN }}/${{ secrets.LAB_NAME }}/ --recursive --include "*.html" --include "*.js" --include "*.css"
+           aws s3 cp build/ s3://${{ secrets.BUCKET_MAIN }}/${{ secrets.LAB_NAME }}/ --recursive --include "*.html" --include "*.js" --include "*.css"
