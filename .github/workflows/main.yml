@@ -18,6 +18,7 @@ jobs:
            cd civil11-test/src
            make all
            cd ../
+           mkdir civil12-test
            cp -rf civil11-test civil12-test
     - name: Configuring AWS CLI
       uses: aws-actions/configure-aws-credentials@v1
