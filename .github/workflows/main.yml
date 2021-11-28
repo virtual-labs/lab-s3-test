@@ -13,10 +13,12 @@ jobs:
     - uses: actions/checkout@v1
     - name: Updating and installing required applications
       run: |
-           sudo apt-get update && sudo apt-get install make awscli -y && mkdir /tmp/${{ secrets.LAB_NAME }}
+           sudo apt-get update && sudo apt-get install make awscli -y && mkdir /tmp/${{ secrets.LAB_NAME }} 
+           mkdir /tmp/civil12-test
            cd civil11-test/src
            make all
            cd ../
+           cp -rf civil11-test civil12-test
     - name: Configuring AWS CLI
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -27,5 +29,7 @@ jobs:
       run: |
            aws s3 rm s3://${{ secrets.BUCKET_BACKUP }}/${{ secrets.LAB_NAME }} --recursive
            aws s3 cp /tmp/${{ secrets.LAB_NAME }} s3://${{ secrets.BUCKET_MAIN }}/ --recursive
+           aws s3 cp /tmp/civil12-test s3://${{ secrets.BUCKET_MAIN }}/ --recursive
            aws s3 mv s3://${{ secrets.BUCKET_MAIN }}/${{ secrets.LAB_NAME }} s3://${{ secrets.BUCKET_BACKUP }}/${{ secrets.LAB_NAME }} --recursive
            aws s3 cp civil11-test/build/ s3://${{ secrets.BUCKET_MAIN }}/${{ secrets.LAB_NAME }}/ --recursive --include "*.html" --include "*.js" --include "*.css"
+           aws s3 cp civil12-test/build/ s3://${{ secrets.BUCKET_MAIN }}/civil12-test/ --recursive --include "*.html" --include "*.js" --include "*.css"
