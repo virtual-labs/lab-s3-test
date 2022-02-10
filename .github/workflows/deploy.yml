@@ -41,4 +41,4 @@ jobs:
            aws s3 cp /tmp/${{ secrets.LAB_NAME }} s3://${{ secrets.BUCKET_MAIN }}/ --recursive
            aws s3 mv s3://${{ secrets.BUCKET_MAIN }}/${{ secrets.LAB_NAME }} s3://${{ secrets.BUCKET_BACKUP }}/${{ secrets.LAB_NAME }} --recursive
            aws s3 cp civil11-test/build/ s3://${{ secrets.BUCKET_MAIN }}/${{ secrets.LAB_NAME }}/ --recursive --include "*.html" --include "*.js" --include "*.css"
-   # aws cloudfront create-invalidation --distribution-id ${{secrets.DISTRIBUTION_ID}} --paths "/*"
+   # aws cloudfront create-invalidation --distribution-id ${{secrets.DISTRIBUTION_ID}} --paths "/civil11-test/*"
