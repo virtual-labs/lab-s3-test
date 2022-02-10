@@ -20,6 +20,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: aws
     steps:
     - uses: actions/checkout@v1
     - name: Updating and installing required applications
