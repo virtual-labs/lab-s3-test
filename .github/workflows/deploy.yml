@@ -32,7 +32,8 @@ jobs:
     - name: a   
       run: 
         |
-          content=`cat ../lab-descriptor.json`
+          ls -a && pwd
+          content=`cat lab-descriptor.json`
           # the following lines are only required for multi line json
           content="${content//'%'/'%25'}"
           content="${content//$'\n'/'%0A'}"
