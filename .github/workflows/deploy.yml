@@ -40,11 +40,7 @@ jobs:
           content="${content//$'\r'/'%0D'}"
           # end of optional handling for multi line json
           echo "::set-output name=packageJson::$content"
-    - name: b
-      run: 
-        |
           echo "${{fromJson(steps.set_var.outputs.packageJson).version}}"
-          echo -e 'Hello\nworld'
     - name: Configuring AWS CLI
       uses: aws-actions/configure-aws-credentials@v1
       with:
