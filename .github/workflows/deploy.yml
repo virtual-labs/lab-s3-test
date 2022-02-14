@@ -29,6 +29,21 @@ jobs:
            cd civil11-test/src
            make all
            cd ../
+    - name: a   
+      run: 
+        |
+          content=`cat ./path/to/package.json`
+          # the following lines are only required for multi line json
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}"
+          # end of optional handling for multi line json
+          echo "::set-output name=packageJson::$content"
+    - name: b
+      run: 
+        |
+          echo "${{fromJson(steps.set_var.outputs.packageJson).version}}"
+          echo -e 'Hello\nworld'
     - name: Configuring AWS CLI
       uses: aws-actions/configure-aws-credentials@v1
       with:
