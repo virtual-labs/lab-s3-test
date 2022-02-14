@@ -29,18 +29,20 @@ jobs:
            cd civil11-test/src
            make all
            cd ../
-    - name: a   
-      run: 
-        |
-          cd ../
-          content=`cat lab-descriptor.json`
-          # the following lines are only required for multi line json
-          content="${content//'%'/'%25'}"
-          content="${content//$'\n'/'%0A'}"
-          content="${content//$'\r'/'%0D'}"
-          # end of optional handling for multi line json
-          echo "::set-output name=packageJson::$content"
-          echo "${{fromJson(steps.set_var.outputs.packageJson).version}}"
+    - name: a
+      steps:
+      - id: set_var
+        run: 
+          |
+            cd ../
+            content=`cat lab-descriptor.json`
+            # the following lines are only required for multi line json
+            content="${content//'%'/'%25'}"
+            content="${content//$'\n'/'%0A'}"
+            content="${content//$'\r'/'%0D'}"
+            # end of optional handling for multi line json
+            echo "::set-output name=packageJson::$content"
+            echo "${{fromJson(steps.set_var.outputs.packageJson).version}}"
     - name: Configuring AWS CLI
       uses: aws-actions/configure-aws-credentials@v1
       with:
