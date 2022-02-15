@@ -23,7 +23,7 @@ jobs:
     environment: aws
     steps:
     - uses: actions/checkout@v1
-    - name: building the lab
+    - name: Building a lab. When lab is built on a server it automatically pushes json to github. 
       run: |
         mkdir /var/www && mkdir /var/www/html
         git clone --depth=1 https://github.com/virtual-labs/ph3-lab-mgmt
