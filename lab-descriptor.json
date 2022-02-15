@@ -5,11 +5,12 @@
   },
   "lab": "test-lab",
   "lab_display_name": "test-lab",
+  
   "phase": 3,
   "collegeName": "test",
-  "baseUrl": "test.vlabs.ac.in",
+  "baseUrl": "test.vlabs.ac.ein",
   "introduction": "Welcome to the test Lab .",
-  "experiment-sections": [
+  "experiments": [
         {
           "name": "Bubble Sort",
           "short-name": "bubble-sort",
@@ -17,7 +18,7 @@
           "tag": "v1.0.6",
           "deploy": true
         }
-      ],
+                 ],
     "targetAudience": {
         "UG": ["test"],
         "PG": ["test"]
