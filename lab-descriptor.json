@@ -1,25 +1,30 @@
-
-  
 {
-    "broadArea": {
-        "name": "",
-        "link": ""
-    },
-    "lab": "",
-    "lab_display_name": "",
-    "deployLab": ,
-    "phase": ,
-    "collegeName": "",
-    "baseUrl": "",
-    "introduction": "",
-    "experiments": [],
+  "broadArea": {
+    "name": "Computer Science and Engineering",
+    "link": "http://vlab.co.in/broad-area-computer-science-and-engineering"
+  },
+  "lab": "test-lab",
+  "lab_display_name": "test-lab",
+  "phase": 3,
+  "collegeName": "test",
+  "baseUrl": "test.vlabs.ac.in",
+  "introduction": "Welcome to the test Lab .",
+  "experiment-sections": [
+        {
+          "name": "Bubble Sort",
+          "short-name": "bubble-sort",
+          "repo": "https://github.com/virtual-labs/exp-bubble-sort-iiith.git",
+          "tag": "v1.0.6",
+          "deploy": true
+        }
+      ],
     "targetAudience": {
-        "UG": [],
-        "PG": []
+        "UG": ["test"],
+        "PG": ["test"]
     },
-    "objective": "",
+    "objective": "test",
     "courseAlignment": {
-        "description": "",
-        "universities": []
+        "description": "test",
+        "universities": ["test"]
     }
 }
