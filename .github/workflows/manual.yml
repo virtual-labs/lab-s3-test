@@ -1,0 +1,23 @@
+# This workflow is manually triggered to revert the lab to the last deployment
+
+name: Revert
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "greet"
+  revert:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Runs a single command using the runners shell
+    - name: Read Config
+      run: echo "Reading config"
+    - name: Revert
+      run: echo "Reverting to last deployment"
