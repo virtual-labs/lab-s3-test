@@ -23,7 +23,7 @@ jobs:
     environment: aws
     steps:
     - uses: actions/checkout@v1
-    - name: Updating and installing required applications
+    - name: building the lab
       run: |
         mkdir /var/www && mkdir /var/www/html
         git clone --depth=1 https://github.com/virtual-labs/ph3-lab-mgmt
