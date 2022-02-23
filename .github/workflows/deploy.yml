@@ -41,9 +41,9 @@ jobs:
         aws-region: ${{ secrets.AWS_REGION }}
     - name: deploying to s3 
       run: |
-           ls /home/runner/work/lab-s3-test/lab-s3-test/ph3-lab-mgmt/exprepos
+           cd /home/runner/work/lab-s3-test/lab-s3-test/ph3-lab-mgmt/exprepos
            # aws s3 rm s3://${{ secrets.BUCKET_BACKUP }}/${{ secrets.LAB_NAME }} --recursive
            # aws s3 cp /tmp/${{ secrets.LAB_NAME }} s3://${{ secrets.BUCKET_MAIN }}/ --recursive
            # aws s3 mv s3://${{ secrets.BUCKET_MAIN }}/${{ secrets.LAB_NAME }} s3://${{ secrets.BUCKET_BACKUP }}/${{ secrets.LAB_NAME }} --recursive
-           aws s3 cp /var/www/html/${{ secrets.BUCKET_MAIN }}/exp/ s3://${{ secrets.BUCKET_MAIN }}/ --recursive --include "*.html" --include "*.js" --include "*.css"
+           aws s3 cp * s3://${{ secrets.BUCKET_MAIN }}/ --recursive --include "*.html" --include "*.js" --include "*.css"
            #aws cloudfront create-invalidation --distribution-id ${{secrets.DISTRIBUTION_ID}} --paths "/civil11-test/*"
