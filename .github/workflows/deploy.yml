@@ -27,6 +27,7 @@ jobs:
       run: |
         git clone --depth=1 https://github.com/virtual-labs/ph3-lab-mgmt
         cd ph3-lab-mgmt
+        git checkout s3-fix
         npm install
         npm run labgen -- ../
 
