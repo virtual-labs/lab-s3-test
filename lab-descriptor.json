@@ -11,13 +11,55 @@
   "baseUrl": "test.vlabs.ac.ein",
   "introduction": "Welcome to the test Lab .",
   "experiments": [
-        {
+    {
           "name": "Bubble Sort",
           "short-name": "bubble-sort",
           "repo": "https://github.com/virtual-labs/exp-bubble-sort-iiith.git",
           "tag": "v1.0.6",
           "deploy": true
-        }
+    }, 
+    {
+      "name": "Conformational analysis of 1,2-dichloroethane",
+      "short-name": "conformational-analysis",
+      "repo": "https://github.com/virtual-labs/exp-conformational-analysis-iiith",
+      "tag": "v1.0.1",
+      "deploy": true
+    },
+    {
+      "name": "Geometry Optimization of Molecules",
+      "short-name": "geometry-optimization-molecules",
+      "repo": "https://github.com/virtual-labs/exp-geometry-optimization-molecules-iiith",
+      "tag": "v1.0.1",
+      "deploy": true
+    },
+    {
+      "name": "Vib-rotational Spectroscopy of Carbon dioxide",
+      "short-name": "carbon-di-oxide",
+      "repo": "https://github.com/virtual-labs/exp-carbon-di-oxide-iiith",
+      "tag": "v1.0.2",
+      "deploy": true
+    },
+    {
+      "name": "Transition State Calculation for SN2 reaction",
+      "short-name": "sn2-reaction",
+      "repo": "https://github.com/virtual-labs/exp-sn2-reaction-iiith",
+      "tag": "v1.0.1",
+      "deploy": true
+    },
+    {
+      "name": "Frequency Analysis for a SN2 reaction",
+      "short-name": "frequency-analysis",
+      "repo": "https://github.com/virtual-labs/exp-frequency-analysis-iiith",
+      "tag": "v1.0.2",
+      "deploy": true
+    },
+    {
+      "name": "Intrinsic Reaction Co-ordinate for a SN2 reaction",
+      "short-name": "intrinsic-reaction",
+      "repo": "https://github.com/virtual-labs/exp-intrinsic-reaction-iiith",
+      "tag": "v1.0.2",
+      "deploy": true
+    }
                  ],
     "targetAudience": {
         "UG": ["test"],
