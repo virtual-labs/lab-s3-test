@@ -30,6 +30,7 @@ jobs:
         git checkout s3-fix
         npm install
         npm run labgen -- ../
+        ls /var/www/html/
 
     - name: Configuring AWS CLI
       uses: aws-actions/configure-aws-credentials@v1
@@ -39,6 +40,7 @@ jobs:
         aws-region: ${{ secrets.AWS_REGION }}
     - name: deploying to s3 
       run: |
+           ls /var/www/html/
            # aws s3 rm s3://${{ secrets.BUCKET_BACKUP }}/${{ secrets.LAB_NAME }} --recursive
            # aws s3 cp /tmp/${{ secrets.LAB_NAME }} s3://${{ secrets.BUCKET_MAIN }}/ --recursive
            # aws s3 mv s3://${{ secrets.BUCKET_MAIN }}/${{ secrets.LAB_NAME }} s3://${{ secrets.BUCKET_BACKUP }}/${{ secrets.LAB_NAME }} --recursive
