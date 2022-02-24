@@ -18,46 +18,74 @@
           "tag": "v1.0.6",
           "deploy": true
     }, 
-    {
-      "name": "Conformational analysis of 1,2-dichloroethane",
-      "short-name": "conformational-analysis",
-      "repo": "https://github.com/virtual-labs/exp-conformational-analysis-iiith",
-      "tag": "v1.0.1",
+   {
+      "name": "Single Span Beams Experiment",
+      "short-name": "single-span-beams",
+      "repo": "https://github.com/virtual-labs/exp-single-span-beams-iiith",
+      "tag": "v1.0.3",
       "deploy": true
     },
     {
-      "name": "Geometry Optimization of Molecules",
-      "short-name": "geometry-optimization-molecules",
-      "repo": "https://github.com/virtual-labs/exp-geometry-optimization-molecules-iiith",
-      "tag": "v1.0.1",
+      "name": "Continuous Beams Experiment",
+      "short-name": "continuous-beams",
+      "repo": "https://github.com/virtual-labs/exp-continuous-beams-iiith",
+      "tag": "v1.0.3",
       "deploy": true
     },
     {
-      "name": "Vib-rotational Spectroscopy of Carbon dioxide",
-      "short-name": "carbon-di-oxide",
-      "repo": "https://github.com/virtual-labs/exp-carbon-di-oxide-iiith",
-      "tag": "v1.0.2",
+      "name": "Column Analysis Experiment",
+      "short-name": "column-analysis",
+      "repo": "https://github.com/virtual-labs/exp-column-analysis-iiith",
+      "tag": "v1.0.3",
       "deploy": true
     },
     {
-      "name": "Transition State Calculation for SN2 reaction",
-      "short-name": "sn2-reaction",
-      "repo": "https://github.com/virtual-labs/exp-sn2-reaction-iiith",
-      "tag": "v1.0.1",
+      "name": "Portal Frames Experiment",
+      "short-name": "portal-frames",
+      "repo": "https://github.com/virtual-labs/exp-portal-frames-iiith",
+      "tag": "v1.0.3",
       "deploy": true
     },
     {
-      "name": "Frequency Analysis for a SN2 reaction",
-      "short-name": "frequency-analysis",
-      "repo": "https://github.com/virtual-labs/exp-frequency-analysis-iiith",
-      "tag": "v1.0.2",
+      "name": "Plates Experiment",
+      "short-name": "plates",
+      "repo": "https://github.com/virtual-labs/exp-plates-iiith",
+      "tag": "v1.0.3",
       "deploy": true
     },
     {
-      "name": "Intrinsic Reaction Co-ordinate for a SN2 reaction",
-      "short-name": "intrinsic-reaction",
-      "repo": "https://github.com/virtual-labs/exp-intrinsic-reaction-iiith",
-      "tag": "v1.0.2",
+      "name": "Rigid Joints Experiment",
+      "short-name": "rigid-joints",
+      "repo": "https://github.com/virtual-labs/exp-rigid-joints-iiith",
+      "tag": "v1.0.3",
+      "deploy": true
+    },
+    {
+      "name": "Arches Experiment",
+      "short-name": "arches",
+      "repo": "https://github.com/virtual-labs/exp-arches-iiith",
+      "tag": "v1.0.3",
+      "deploy": true
+    },
+    {
+      "name": "Trusses Experiment",
+      "short-name": "trusses",
+      "repo": "https://github.com/virtual-labs/exp-trusses-iiith",
+      "tag": "v1.0.3",
+      "deploy": true
+    },
+    {
+      "name": "Retaining Walls Experiment",
+      "short-name": "retaining-walls",
+      "repo": "https://github.com/virtual-labs/exp-retaining-walls-iiith",
+      "tag": "v1.0.3",
+      "deploy": true
+    },
+    {
+      "name": "Plastic Hinge Experiment",
+      "short-name": "plastic-hinge",
+      "repo": "https://github.com/virtual-labs/exp-plastic-hinge-iiith",
+      "tag": "v1.0.3",
       "deploy": true
     }
                  ],
