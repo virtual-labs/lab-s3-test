@@ -42,5 +42,5 @@ jobs:
     - name: deploying to s3 
       run: |
            cd /home/runner/work/lab-s3-test/lab-s3-test/ph3-lab-mgmt/
-           aws s3 cp exprepos/ s3://${{ secrets.BUCKET_MAIN }}/ --recursive --include "*.html" --include "*.js" --include "*.css"
+           aws s3 cp exprepos/ s3://${{ secrets.ORG_S3_CS_TEST }}/ --recursive --include "*.html" --include "*.js" --include "*.css"
 # aws cloudfront create-invalidation --distribution-id ${{secrets.DISTRIBUTION_ID}} --paths "/civil11-test/*"
