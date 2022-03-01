@@ -39,4 +39,4 @@ jobs:
         aws-region: ${{ secrets.AWS_REGION }}
     - name: deploying to s3 
       run: |
-           ./build-script.sh
+           ./git-s3.sh
