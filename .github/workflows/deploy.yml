@@ -39,4 +39,7 @@ jobs:
     - name: deploying to s3 
       run: |
            cd inf-deployment-master
-           bash -eux ./git-s3.sh
+           ./git-s3.sh
+      env:
+           github_repository: ${{ github.repository }}
+           BUCKET_ORG_S3_CS_TEST: ${{ secrets.ORG_S3_CS_TEST }}
