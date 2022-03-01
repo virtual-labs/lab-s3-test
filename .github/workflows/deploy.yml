@@ -29,7 +29,6 @@ jobs:
         cd inf-deployment-master
         chmod +x build-script.sh git-s3.sh
         ./build-script.sh
-        cd ../
 
     - name: Configuring AWS CLI
       uses: aws-actions/configure-aws-credentials@v1
