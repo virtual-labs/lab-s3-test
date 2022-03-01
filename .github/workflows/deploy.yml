@@ -20,7 +20,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: aws
+    #environment: aws
     steps:
     - uses: actions/checkout@v1
     - name: Building a lab. When lab is built on a server it automatically pushes json to github. 
@@ -38,7 +38,7 @@ jobs:
         aws-region: ${{ secrets.AWS_REGION }}
     - name: deploying to s3 
       run: |
-           pwd
+           cd inf-deployment-master
            ./git-s3.sh
       env:
            github_repository: ${{ secrets.REPOSITORY_NAME }}
