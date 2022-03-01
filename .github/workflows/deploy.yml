@@ -39,4 +39,4 @@ jobs:
     - name: deploying to s3 
       run: |
            cd inf-deployment-master
-           ./git-s3.sh
+           bash -eux ./git-s3.sh
