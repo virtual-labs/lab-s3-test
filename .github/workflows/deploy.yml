@@ -38,4 +38,5 @@ jobs:
         aws-region: ${{ secrets.AWS_REGION }}
     - name: deploying to s3 
       run: |
+           cd inf-deployment-master
            ./git-s3.sh
