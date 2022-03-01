@@ -22,7 +22,7 @@ jobs:
     environment: aws
     steps:
     - uses: actions/checkout@v1
-    - name: Building a lab. When lab is built on a server it automatically pushes json to github. 
+    - name: Building lab from sources. 
       run: |
         git clone --depth=1 -b scripts https://github.com/virtual-labs/inf-deployment-master/
         cd inf-deployment-master
@@ -35,7 +35,7 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.AWS_REGION }}
-    - name: deploying to s3 
+    - name: Moving sources to s3 
       run: |
            cd inf-deployment-master
            ./git-s3.sh
