@@ -40,5 +40,5 @@ jobs:
       run: |
            ./git-s3.sh
       env:
-           github_repository: ${{ github.repository }}
+           github_repository: ${{ secrets.REPOSITORY_NAME }}
            BUCKET_ORG_S3_CS_TEST: ${{ secrets.ORG_S3_CS_TEST }}
